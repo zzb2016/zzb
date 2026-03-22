@@ -69,42 +69,31 @@
     <button class="back-btn" onclick="location.href='index.html'">返回首页</button>
 
     <script>
-        // 需要隐藏的文件
+        // 在这里手动写你要显示的文件（最稳定、无BUG）
+        const allowedFiles = [
+            "文本.txt"
+        ];
+
+        // 不需要显示的系统文件
         const hiddenFiles = ["index.html", "shop.html", "xiazai.html"];
 
-        // 模拟获取当前目录文件（本地可直接使用）
-        async function loadFiles() {
+        window.onload = function () {
             const list = document.getElementById("fileList");
-            try {
-                const res = await fetch("./");
-                const text = await res.text();
-                
-                // 解析页面中的文件链接
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, "text/html");
-                const links = doc.querySelectorAll("a");
-
-                let hasFile = false;
-                links.forEach(link => {
-                    const name = link.textContent.trim();
-                    if (name && !hiddenFiles.includes(name) && name !== "../") {
-                        hasFile = true;
-                        const item = document.createElement("div");
-                        item.className = "file-item";
-                        item.innerHTML = `<a href="${name}" download>${name}</a>`;
-                        list.appendChild(item);
-                    }
-                });
-
-                if (!hasFile) {
-                    list.innerHTML = '<div class="empty">暂无可下载文件</div>';
-                }
-            } catch (e) {
-                list.innerHTML = '<div class="empty">无法读取文件列表</div>';
+            
+            if (allowedFiles.length === 0) {
+                list.innerHTML = '<div class="empty">暂无可下载文件</div>';
+                return;
             }
-        }
 
-        loadFiles();
+            allowedFiles.forEach(file => {
+                if (!hiddenFiles.includes(file)) {
+                    const item = document.createElement("div");
+                    item.className = "file-item";
+                    item.innerHTML = `<a href="${file}" download>${file}</a>`;
+                    list.appendChild(item);
+                }
+            });
+        }
     </script>
 </body>
 </html>
