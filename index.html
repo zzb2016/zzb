@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- 适配手机端 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的自我介绍</title>
     <style>
@@ -19,14 +18,12 @@
             line-height: 1.6;
         }
 
-        /* 页面容器 */
         .container {
             max-width: 800px;
             margin: 50px auto;
             padding: 0 20px;
         }
 
-        /* 卡片样式 */
         .card {
             background: white;
             border-radius: 12px;
@@ -35,7 +32,6 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
-        /* 头像 */
         .avatar {
             width: 120px;
             height: 120px;
@@ -46,7 +42,6 @@
             border: 4px solid #4285f4;
         }
 
-        /* 标题 */
         h1 {
             text-align: center;
             color: #222;
@@ -60,13 +55,11 @@
             margin-bottom: 25px;
         }
 
-        /* 段落 */
         p {
             margin-bottom: 15px;
             font-size: 16px;
         }
 
-        /* 列表 */
         ul {
             margin-left: 20px;
             margin-bottom: 15px;
@@ -76,7 +69,6 @@
             margin-bottom: 8px;
         }
 
-        /* 模块标题 */
         .section-title {
             color: #4285f4;
             margin: 20px 0 10px;
@@ -85,7 +77,6 @@
             padding-left: 10px;
         }
 
-        /* 联系方式 */
         .contact {
             text-align: center;
             margin-top: 20px;
@@ -100,48 +91,62 @@
         .contact a:hover {
             text-decoration: underline;
         }
+
+        /* 商店按钮样式 */
+        .shop-btn {
+            display: block;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #4285f4;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 18px;
+            margin: 20px auto;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .shop-btn:hover {
+            background-color: #3367d6;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 基本信息卡片 -->
         <div class="card">
             <img src="https://picsum.photos/200/200" alt="头像" class="avatar">
-            <h1>zzb</h1>
+            <h1>张三</h1>
             <div class="title">前端爱好者 | 乐观学习者 | 生活记录者</div>
+            <p>你好！我是张三，一名热爱技术、喜欢探索新鲜事物的学习者。</p>
 
-            <p>你好！我是zzb，一名热爱技术、喜欢探索新鲜事物的学习者。性格开朗，做事认真，乐于沟通，喜欢在实践中不断提升自己。</p>
+            <!-- 跳转到商店的按钮 -->
+            <a href="shop.html" class="shop-btn">进入我的商店</a>
         </div>
 
-        <!-- 技能卡片 -->
         <div class="card">
             <h3 class="section-title">我的技能</h3>
             <ul>
                 <li>基础 HTML / CSS / JavaScript</li>
                 <li>简单网页制作与美化</li>
                 <li>Office 办公软件</li>
-                <li>快速学习与问题解决</li>
             </ul>
         </div>
 
-        <!-- 爱好卡片 -->
         <div class="card">
             <h3 class="section-title">我的爱好</h3>
             <ul>
                 <li>编程、做网页</li>
                 <li>听音乐、看电影</li>
-                <li>阅读、写作</li>
-                <li>运动、散步</li>
+                <li>阅读、运动</li>
             </ul>
         </div>
 
-        <!-- 联系方式 -->
         <div class="card contact">
             <h3 class="section-title">联系我</h3>
-            <div>
-                <a href="mailto:zzb@mail.com">zzb@mail.com</a>
-                <a href="#">微信：zzb123</a>
-            </div>
+            <a href="mailto:example@mail.com">example@mail.com</a>
         </div>
     </div>
 </body>
